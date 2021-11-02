@@ -30,6 +30,12 @@
 		<input id="sunroof" type="checkbox" value="1000">
 		Sunroof: $1000
 	</label>
+
+    <label>
+        <input id="gps" type="checkbox" value="5000">
+        Built-in GPS: $5000
+    </label>
+    
 </form>
 
 <div>
@@ -43,7 +49,7 @@ document.getElementById('price').innerHTML = price;
 
 // when user clicks sunroof, handle it properly
 document.getElementById('sunroof').onclick = handleOption;
-
+document.getElementById('gps').onclick = handleOption;
 // when user clicks an option...
 function handleOption(){
 
