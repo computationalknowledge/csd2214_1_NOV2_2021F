@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+</head>
+<body>
+    <!
+	- goal: let users select options, then show price
+	- handling the price:
+		- we can store it in a variable
+		- the price should change when an option is clicked
+	- handling the options:
+		- use checkboxes for options that can all be added
+		- use radio buttons where user can only select one
+		- data can be stored in an object
+	- handling the display:
+		- we want to show a list of selections, not just price
+    -->
+
+
+<h1> Welcome to Peanut's Car Shoppe</h1>
+
+<script>
+
+</script>
+
+<form id="carform" autocomplete="off">
+	<label>
+		<input id="sunroof" type="checkbox" value="1000">
+		Sunroof: $1000
+	</label>
+</form>
+
+<div>
+	Total Price: <span id="price"></span>
+</div>
+
+<script>
+// start the price at 20000 and show it
+var price = 20000;
+document.getElementById('price').innerHTML = price;
+
+// when user clicks sunroof, handle it properly
+document.getElementById('sunroof').onclick = handleOption;
+
+// when user clicks an option...
+function handleOption(){
+
+	// convert value from string to number
+	var itemPrice = Number(this.value);
+	
+	// if checked, add to total price
+	if(this.checked){
+		price += itemPrice;
+	}
+
+	// otherwise, subtract from total price
+	else{
+		price -= itemPrice;
+	}
+
+	// show price
+	document.getElementById('price').innerHTML = price;
+}
+</script>
+
+
+</body>
+</html>
